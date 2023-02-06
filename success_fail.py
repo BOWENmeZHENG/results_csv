@@ -4,7 +4,7 @@ from pathlib import Path
 # If stress_t < 0.2, fail
 # csv: density, strength, failure_strain
 with open('result.csv', 'w') as f:
-    f.write('name,density,strength,failure_strain,num_atoms,num_bonds\n')
+    f.write('name,density,strength,failure_strain,num_atoms,num_bonds,bond_per_atom\n')
 all_folders = [f.path for f in os.scandir() if f.is_dir()]
 for folder in all_folders:
     if folder.startswith(f'./_f') and Path(f'{folder}/tension.lammpstrj').is_file():

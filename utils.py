@@ -59,14 +59,6 @@ def parse(trj_name, line_limit=500000):
                 break
             line = f_trj.readline()
             i += 1
-            # Get step
-            # if line == 'ITEM: TIMESTEP\n':
-            #     line = f_trj.readline()
-            #     i += 1
-            #     line_list = [int(num_str) for num_str in line.split()]
-            #     step = line_list[0]
-            #     steps.append(step)
-            #     xyz[step] = []
 
             # Get atom number
             if line == 'ITEM: NUMBER OF ATOMS\n':
