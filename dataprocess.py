@@ -10,10 +10,15 @@ for index in result_ids:
     all_data.append(pd.read_csv(f'result_{index}.csv'))
 all_data = pd.concat(all_data)
 
+all_data = all_data[all_data.failure_strain < 3]
+
 # Extract s/f data
 data_success = all_data[all_data['strength'] > 0.2]
 data_fail = all_data[all_data['strength'] < 0.2]
 utpl.plot_scatter(data_success, data_fail)
+
+utpl.plot_property(data_success, 'density', 'strength', 'density', 'strength')
+utpl.plot_property(data_success, 'density', 'failure_strain', 'density', 'failure_strain')
 
 # Plot
 # utpl.plot_hist(data_success['density'], 'well connected', r'density ($\rm mg/cm^3$)')

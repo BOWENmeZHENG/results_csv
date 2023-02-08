@@ -19,5 +19,14 @@ def plot_scatter(data_success, data_fail):
     plt.ylabel(r'$N \rm _{bond/atom}$', fontsize=16)
     plt.xticks(fontsize=14)
     plt.yticks(fontsize=14)
-    plt.legend(fontsize=15, frameon=True)
+    plt.legend(fontsize=16, frameon=True)
+    plt.show()
+
+def plot_property(data, xname, yname, xlabel, ylabel):
+    plt.figure(figsize=(8, 6))
+    plt.scatter(data[xname], data[yname])
+    plt.xlabel(xlabel, fontsize=16)
+    plt.ylabel(ylabel, fontsize=16)
+    plt.xticks(fontsize=14)
+    plt.yticks(fontsize=14)
     plt.show()
