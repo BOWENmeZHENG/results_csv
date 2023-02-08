@@ -10,3 +10,14 @@ def plot_hist(data, title, xlabel):
     plt.xticks(fontsize=14)
     plt.yticks(fontsize=14)
     plt.show()
+
+def plot_scatter(data_success, data_fail):
+    plt.figure(figsize=(8, 6))
+    plt.scatter(data_success['density'], data_success['bond_per_atom'], label='well connected')
+    plt.scatter(data_fail['density'], data_fail['bond_per_atom'], label='not connected')
+    plt.xlabel(r'$\rho$ ($\rm mg/cm^3$)', fontsize=16)
+    plt.ylabel(r'$N \rm _{bond/atom}$', fontsize=16)
+    plt.xticks(fontsize=14)
+    plt.yticks(fontsize=14)
+    plt.legend(fontsize=15, frameon=True)
+    plt.show()
